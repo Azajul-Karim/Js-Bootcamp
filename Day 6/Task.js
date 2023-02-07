@@ -31,8 +31,11 @@ console.log(myFunction(null));
 console.log(myFunction("string"));
 console.log(myFunction(["array"]));
 
-function printDay(days) {
+// Task 5
+// with array
+function printDay(num) {
   const daysOfWeek = [
+    undefined,
     "Saturday",
     "Sunday",
     "Monday",
@@ -41,7 +44,50 @@ function printDay(days) {
     "Thursday",
     "Friday",
   ];
-  const index = daysOfWeek.length;
-  return index == days;
+  return daysOfWeek[num];
 }
-console.log(printDay("Saturday"));
+console.log(printDay(4));
+console.log(printDay(7));
+console.log(printDay(41));
+
+// ****OR***
+// with Object
+
+function printDay(num) {
+  const daysOfWeek = {
+    1: "Saturday",
+    2: "Sunday",
+    3: "Monday",
+    4: "Tuesday",
+    5: "Wednesday",
+    6: "Thursday",
+    7: "Friday",
+  };
+  return daysOfWeek[num];
+}
+console.log(printDay(4));
+console.log(printDay(7));
+console.log(printDay(41));
+
+// Task 6
+function lastElement(arr) {
+  return arr[arr.length - 1];
+}
+console.log(lastElement([1, 2, 3, 4]));
+console.log(lastElement([1, 2, 3, 10]));
+console.log(lastElement([1, 2, 3, "hi"]));
+console.log(lastElement([]));
+
+// Task 7
+
+function createObj(arg1, arg2, arg3) {
+  const order = {
+    x: arg1,
+    y: arg2,
+    z: arg3,
+  };
+  return order;
+}
+console.log(createObj(1, 2, 3));
+console.log(createObj("a", "b", "c"));
+console.log(createObj("ab", "bc", "ca"));
