@@ -106,3 +106,60 @@ console.log(a < 10 || b !== 5); //short circuit
 
 //Logical Not
 console.log(!(a === b));
+
+//Truthy And Falsy Value
+/*
+ Falsy Value
+ 1.False
+ 2.0
+ 3.""
+ 4.null
+ 5.undefined
+ 6.NaN
+ */
+//  Truthy Value
+// console.log(Boolean("topu"));
+// console.log(Boolean(0));
+// console.log(Boolean(true === true));
+// console.log(Boolean(true === 0));
+// console.log(Boolean(true === null));
+// console.log(Boolean(true === ""));
+// console.log(Boolean(true === " "));
+// console.log(Boolean(true === null));
+
+// console.log(!!"topu");
+// console.log(!!0);
+// console.log(!!"");
+// console.log(!!" ");
+// console.log(!!null);
+// console.log(!!undefined);
+
+console.log(true && true);
+console.log(true && false);
+console.log(false && false);
+console.log(true || false);
+console.log(true || true);
+console.log(false && true);
+
+let daynamicValue = true;
+
+console.log(daynamicValue && "Hello");
+console.log(daynamicValue || "Hello");
+
+//Operator Precedence
+console.log(2 + 3 * 10);
+console.log((21 / 7) * 10);
+console.log((2 + 3) * 10); //grouping Operator
+
+// few interesting case
+/*
+true == "1";       //true
+0 == false;        //true
+null == undefined; //true
+NaN == NaN;        //true
+*/
+console.log(null == null);
+console.log(null == undefined);
+console.log(null == 1);
+console.log("hello" * 3);
+console.log(typeof NaN);
