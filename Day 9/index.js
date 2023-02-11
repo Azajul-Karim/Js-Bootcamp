@@ -45,3 +45,8 @@ switch (studyLevel) {
 
 const result = studyLevel === "average" ? "You Will Passed" : "You will Fail";
 console.log(result);
+
+var myName = "topu";
+if (myName === "topu") {
+  console.log("you are allowed");
+}
