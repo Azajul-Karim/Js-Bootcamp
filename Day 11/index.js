@@ -97,3 +97,67 @@ console.log(Number.isNaN(10));
 console.log(Number.isNaN("topu"));
 
 const worldString = "Hello, world";
+
+//adding removing data from array
+const arr = [2, 3, 4, 5, 6];
+//adding element from the end of the array
+arr.push(5);
+console.log(arr);
+//remove element from the end of the array
+arr.pop();
+console.log(arr);
+//adding element from the beginning of the array
+arr.unshift(1);
+console.log(arr);
+//remove element from the beginning of the array
+arr.shift(1);
+console.log(arr);
+
+//arr last index
+console.log(arr[arr.length - 1]);
+
+// slice(dosen't mutate the original array)
+console.log(arr.slice(0, 2));
+console.log(arr.slice(2));
+console.log(arr.slice(-2));
+console.log(arr.slice(-5, -2));
+console.log(arr);
+
+//splice
+// console.log(arr.splice(1, 3, "hello"));
+// console.log(arr);
+
+//Array Method
+const arr1 = [1, 2, 3, 4, 5];
+const arr2 = [5, 6, 7, 8];
+// concat
+console.log(arr1.concat(8, 9, 10));
+console.log(arr1.concat(arr2));
+// join
+console.log(arr1.join(","));
+console.log(arr1);
+
+// indexOf
+console.log(arr1.indexOf(5));
+
+// lastIndexOf
+console.log(arr1.lastIndexOf(1));
+
+//fill
+console.log(new Array(10).fill("topu"));
+
+//revers array
+console.log(arr1.reverse());
+
+//checking data type
+console.log(Array.isArray(arr1));
+
+//object method
+const profile = {
+  fName: "azajul",
+  lName: "karim",
+  age: 30,
+  profession: "Software Developer",
+};
+console.log("fName" in profile);
+console.log("lName" in profile);
