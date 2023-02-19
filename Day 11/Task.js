@@ -1,77 +1,98 @@
-// 6.Adding and removing data from array.wmv
-// //total Number-20
 // //Exercise-1: (3)
-// // Write a function that takes two strings (a and b) as arguments
-// // If a contains b, append b to the beginning of a
-// // If not, append it to the end
-// // Return the concatenation
-// function myFunction(a, b) {
-//   return
-// }
-
-// myFunction('cheese', 'cake') //'cheesecake'
-// myFunction('lips', 's') //'slips'
-// myFunction('Java', 'script') //'Javascript'
-// myFunction(' think, therefore I am', 'I') //'I think, therefore I am'
+function myFunction(a, b) {
+  return a.includes(b) ? b + a : a + b;
+}
+console.log(myFunction("cheese", "cake"));
+console.log(myFunction("lips", "s"));
+console.log(myFunction("Java", "script"));
+console.log(myFunction(" think, therefore I am", "I"));
 
 // //Exercise-2:(3)
-// // Write a function that takes two strings (a and b) as arguments
-// // Beginning at the end of 'a', insert 'b' after every 3rd character of 'a'
-// // Return the resulting string
-// function myFunction(a, b) {}
-// myFunction('1234567', '.') //'1.234.567'
-// myFunction('abcde', '$') //'ab$cde'
-// myFunction('zxyzxyzxyzxyzxyz', 'w') //'zwxyzwxyzwxyzwxyzwxyz'
+function myFunction(a, b) {
+  let result = [];
+  let rest = a;
+  while (rest.length) {
+    result.push(rest.slice(-3));
+    rest = rest.slice(0, -3);
+  }
+  return result.reverse().join(b);
+}
+console.log(myFunction("1234567", "."));
+console.log(myFunction("abcde", "$"));
+console.log(myFunction("zxyzxyzxyzxyzxyz", "w"));
 
-// //Exercise-3:(3)
-// // Write a function that takes a string as argument
-// // As it is, the string has no meaning
-// // Increment each letter to the next letter in the alphabet
-// // Return the correct word
-// function myFunction(str) {
-//   return
-// }
-// myFunction('bnchmf') //'coding'
-// myFunction('bgddrd') //'cheese'
-// myFunction('sdrshmf') //'testing'
+//Exercise-3:(3)
+function myFunction(a) {
+  let b = [];
+  for (i = 0; i < a.length; i++) {
+    b[i] = String.fromCharCode(a.charCodeAt(i) + 1);
+  }
+  return b.join("");
+}
 
-// //Exercise-4:(3)
-// // Write a function that takes an array (a) and a number (n) as arguments
-// // It should return the last n elements of a
-// //make sure you don't mutate original array
-// function myFunction(a, n) {
-//   return
-// }
-// myFunction([1, 2, 3, 4, 5], 2) //[ 4, 5 ]
-// myFunction([1, 2, 3], 6) //[ 1, 2, 3 ]
-// myFunction([1, 2, 3, 4, 5, 6, 7, 8], 3) //[ 6, 7, 8 ]
+console.log(myFunction("bnchmf"));
+console.log(myFunction("bgddrd"));
+console.log(myFunction("sdrshmf"));
 
-// //Exercise-5:(3)
-// // Write a function that takes two numbers (a and b) as arguments
-// // If a is smaller than b, divide a by b
-// // Otherwise, multiply both numbers
-// // Return the resulting value
-// function myFunction(a, b) {
-//   return
-// }
+//Exercise-4
+function myFunction(a, n) {
+  return a.slice(a.length - n);
+}
+console.log(myFunction([1, 2, 3, 4, 5], 2));
+console.log(myFunction([1, 2, 3], 6));
+console.log(myFunction([1, 2, 3, 4, 5, 6, 7, 8], 3));
 
-// myFunction(10, 100) // 0.1
-// myFunction(90, 45) //4050
-// myFunction(8, 20) //0.4
-// myFunction(2, 0.5) //1
+//Exercise-5
+function myFunction(a, b) {
+  return a < b ? a / b : a * b;
+}
+console.log(myFunction(10, 100));
+console.log(myFunction(90, 45));
+console.log(myFunction(8, 20));
+console.log(myFunction(2, 0.5));
 
-// Exercise-6:(5)
-// For each of the exercises below, assume you are starting with the following people array.
+// Exercise-6
+let people = ["samim", "Anis", "Adnan", "Karim"];
+//  * Answer-1:
+for (let i of people) {
+  console.log(i);
+}
 
-// let people = ["samim", "Anis", "Adnan", "Karim"];
-// 1.Using a loop, iterate through this array and console.log all of the people one by one.
-// 2.Write the command to remove "samim" from the array.
-// 3.Write the command to remove "Karim" from the array.
-// 4.Write the command to add "Ifat" to the front of the array.
-// 5.Write the command to add your name to the end of the array.
-// 6.Using a loop, iterate through this array and after console.logging "Anis", exit from the loop.
-// 7.Write the command to make a copy of the array using slice. The copy should NOT include "Anis" or "Ifat".
-// 8.Write the command that gives the indexOf where "Anis" is located.
-// 9.Write the command that gives the indexOf where "Foo" is located (this should return -1).
-// 10.Redefine the people variable with the value you started with. Using the splice command, remove "Adnan" from the array and add "Elizabeth" and "Bob". Your array 1.should look like this when you are done ["samim", "Anis", "Elizabeth", "Bob", "Karim"].
-// 11.Create a new variable called withMiraz and set it equal to the people array 1.concatenated with the string of "Miraz".
+//  * Answer-2:
+console.log(people.shift());
+
+//  * Answer-3:
+console.log(people.pop());
+
+//  * Answer-4:
+console.log(people.unshift("ifat"));
+
+//  * Answer-5:
+console.log(people.push("virat"));
+
+//  * Answer-6:
+for (let i of people) {
+  if (i === "Anis") {
+    console.log(i);
+    break;
+  }
+}
+
+//  * Answer-7:
+console.log(people.slice(0, 1).concat(people.slice(2)));
+
+//  * Answer-8:
+console.log(people.indexOf("Anis"));
+
+//  * Answer-9:
+
+console.log(people.indexOf("Foo"));
+
+//  * Answer-10:
+
+console.log(people.splice(2, 1, "Elizabeth", "Bob"));
+
+//  * Answer-11:
+
+let withMiraz = people.concat("Miraz");
+console.log(withMiraz);
