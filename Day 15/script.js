@@ -32,3 +32,41 @@ const profileObj = {
 
 // console.log(firstName, lastName, profession);
 // console.log(fullName.call(profileObj));
+
+//Rest Operator
+// array
+const [firstName, ...restValue] = profile;
+
+console.log(firstName);
+console.log(restValue);
+
+// object
+const { lastName, ...restValueObj } = profileObj;
+
+console.log(lastName);
+console.log(restValueObj);
+
+// Spred Operator
+const fruit = ["mengo", "apple", "orange", ...profile];
+
+console.log(fruit);
+
+const homeProfileObj = {
+  ...profileObj,
+  homeAddress: "Sylhet",
+};
+
+console.log(homeProfileObj);
+
+//Destructuring and rest in funtion
+
+// function printProfile({ lName, fName, email }) {
+//   return `${fName} ${lName} ${email}`;
+// }
+
+// const profileFunc = {
+//   fName: "Azajul",
+//   lName: "Karim",
+//   email: "topu@gmail.com",
+// };
+// console.log(printProfile(profileFunc));
